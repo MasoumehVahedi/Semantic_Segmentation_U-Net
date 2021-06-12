@@ -101,10 +101,10 @@ def show_pred_segments(train_dataset=None, num=None, unet_model=None, img_sample
         mask_pred = unet_model.predict(image)
         mask_pred = tf.argmax(mask_pred, axis=-1)
         mask_pred = mask_pred[..., tf.newaxis]
-        display_images([image[0], mask[0], mask_pred])
+        display_images([image[0], mask[0], mask_pred[0]])
     else:
       mask_pred = unet_model.predict(img_sample[tf.newaxis, ...])
       mask_pred = tf.argmax(mask_pred, axis=-1)
       mask_pred = mask_pred[..., tf.newaxis]
-      display_images([img_sample, mask_sample, mask_pred])
+      display_images([img_sample, mask_sample, mask_pred[0]])
 
