@@ -5,9 +5,7 @@ from tensorflow.keras.layers import MaxPooling2D
 from tensorflow.keras.layers import UpSampling2D
 from tensorflow.keras.layers import concatenate
 from tensorflow.keras.layers import Conv2DTranspose
-from tensorflow.keras.layers import BatchNormalization
 from tensorflow.keras.layers import Dropout
-from tensorflow.keras.layers import Lambda
 
 
 def UNet_model(num_classes=12, IMG_HEIGHT=128, IMG_WIDTH=128, IMG_CHANNELS=3):
