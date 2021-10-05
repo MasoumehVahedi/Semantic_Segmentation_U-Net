@@ -27,7 +27,7 @@ class UNet_model():
     """U-Net Model"""
 
     def build_unet(self):
-        # Convolutional downsampling block
+        # Build downsampling block
         def encoder_block(input_layer, num_filters=32, dropout=0, max_pooling=True):
             # Add downsampling layer
             encoder = Conv2D(num_filters, (3 ,3),
@@ -52,7 +52,7 @@ class UNet_model():
 
             return next_encoder, skip_coonection
 
-        # Convolutional upsampling block
+        # Build upsampling block
         def decoder_block(input_layer, skip_input, num_filters=32, dropout=True):
             # Add upsampling layer
             upsample_layer = Conv2DTranspose(num_filters, (3 ,3),
